@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-styled;
-
 export default function Home() {
   return (
     <div>
