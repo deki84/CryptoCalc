@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 export default function Home() {
   return (
     <div>
@@ -9,5 +8,6 @@ export default function Home() {
 }
 
 const Headline = styled.h1`
-  background-color: black;
+  display: flex;
+  justify-content: center;
 `;
