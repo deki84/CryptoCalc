@@ -1,24 +1,38 @@
 import styled from 'styled-components';
+import Image from 'next/image';
+import Logo from '../public/Logo.png';
+
 export default function Home() {
   return (
-    <div>
-      <Headline>CryptoCalc</Headline>
-      <Form>
-        <Input1
-          id="name"
-          type="text"
-          placeholder="Type here your Monthly Expenses in €"
-        />
-        <Input1
-          id="name"
-          type="text"
-          placeholder="Type here your crypto value "
-        />
-        <Button>Click me</Button>
-      </Form>
-    </div>
+    <>
+      <div>
+        <Div>
+          <Image layout="intrinsic" src={Logo} alt="something has failed " />
+        </Div>
+        <Headline>CryptoCalc</Headline>
+        <Form>
+          <Input1
+            id="name"
+            type="text"
+            placeholder="Type here your Monthly Expenses in €"
+          />
+          <Input1
+            id="name"
+            type="text"
+            placeholder="Type here your crypto value "
+          />
+          <Button>Click me</Button>
+        </Form>
+        <p>Your current value is ...</p>
+      </div>
+    </>
   );
 }
+
+const Div = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 const Button = styled.button`
   margin-left: 148px;
