@@ -10,4 +10,5 @@ export default function Home() {
 const Headline = styled.h1`
   display: flex;
   justify-content: center;
+  font-family: 'Holtwood One SC', serif;
 `;
