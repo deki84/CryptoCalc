@@ -14,7 +14,7 @@ export default function Input() {
         placeholder="Type here your crypto value "
       />
 
-      <Button>Click me</Button>
+      <Button type="submit">Click me</Button>
     </>
   );
 }
