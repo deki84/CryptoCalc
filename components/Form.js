@@ -63,7 +63,7 @@ export default function Form({ onCalculatePrice, value }) {
         >
           Click me
         </Button>
-        {show && value ? <Text>Your current value is {value} </Text> : null}
+        {show && value ? <Text>Your current value is {value} € </Text> : null}
       </StyledForm>
     </>
   );
