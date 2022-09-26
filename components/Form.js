@@ -22,6 +22,14 @@ export default function Form({ onCalculatePrice, value }) {
     const limit = 9;
     setNum1(event.target.value.slice(0, limit));
   };
+  function Timeout() {
+    Button.disabled = true;
+    setTimeout(function () {
+      setNum('');
+      setNum1('');
+      Button.disabled = false;
+    }, 2000);
+  }
 
   return (
     <>
@@ -47,8 +55,14 @@ export default function Form({ onCalculatePrice, value }) {
           placeholder="Type here your crypto value "
           required
         />
-        <Button onClick={() => setShow(!show)}>Click me</Button>
-        {show ? <Text>Your current value is {value} </Text> : null}
+        <Button
+          onClick={() => {
+            setShow(!show), Timeout();
+          }}
+        >
+          Click me
+        </Button>
+        {show ? <Text>Your current value is {value}</Text> : null}
       </StyledForm>
     </>
   );
