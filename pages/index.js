@@ -9,12 +9,11 @@ export default function Home() {
 
   function calculatePrice(value, expense) {
     const bitcoin = 20000;
-    const result = (value * bitcoin) / expense;
-
-    function calculate() {
-      return Number(result).toFixed(2);
+    let result = 0;
+    if (expense) {
+      result = ((value * bitcoin) / expense).toFixed(2);
     }
-    setValue(calculate);
+    setValue(result);
   }
 
   return (
@@ -29,12 +28,6 @@ export default function Home() {
     </>
   );
 }
-
-const Text = styled.p`
-  display: flex;
-  justify-content: center;
-`;
-
 const Div = styled.div`
   display: flex;
   justify-content: center;

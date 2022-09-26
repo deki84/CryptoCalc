@@ -5,29 +5,29 @@ export default function Form({ onCalculatePrice, value }) {
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
-    const expenses = form.expenses.value;
-    const cryptovalue = form.cryptovalue.value;
+    const expenses = Number(form.expenses.value);
+    const cryptovalue = Number(form.cryptovalue.value);
 
     onCalculatePrice(cryptovalue, expenses);
   }
   const [show, setShow] = useState(false);
-  const [num, setNum] = useState('');
+  const [num, setNum] = useState();
   const handleNumChange = (event) => {
     const limit = 9;
     setNum(event.target.value.slice(0, limit));
   };
 
-  const [num1, setNum1] = useState('');
+  const [num1, setNum1] = useState();
   const handleNumChange1 = (event) => {
     const limit = 9;
     setNum1(event.target.value.slice(0, limit));
   };
-  function Timeout() {
-    Button.disabled = true;
+  function timeout() {
     setTimeout(function () {
       setNum('');
       setNum1('');
-      Button.disabled = false;
+      onCalculatePrice(0, 0);
+      setShow(false);
     }, 2000);
   }
 
@@ -57,12 +57,13 @@ export default function Form({ onCalculatePrice, value }) {
         />
         <Button
           onClick={() => {
-            setShow(!show), Timeout();
+            setShow(true);
+            timeout();
           }}
         >
           Click me
         </Button>
-        {show ? <Text>Your current value is {value}</Text> : null}
+        {show && value ? <Text>Your current value is {value} </Text> : null}
       </StyledForm>
     </>
   );
