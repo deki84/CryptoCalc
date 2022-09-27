@@ -11,7 +11,7 @@ export default function Home() {
     const bitcoin = 20000;
     let result = 0;
     if (expense) {
-      result = ((value * bitcoin) / expense).toFixed(2);
+      result = ((value * bitcoin) / expense).toFixed(0);
     }
     setValue(result);
   }
