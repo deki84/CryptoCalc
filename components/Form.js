@@ -28,7 +28,7 @@ export default function Form({ onCalculatePrice, value }) {
       setNum1('');
       onCalculatePrice(0, 0);
       setShow(false);
-    }, 2000);
+    }, 3000);
   }
 
   return (
@@ -43,7 +43,7 @@ export default function Form({ onCalculatePrice, value }) {
           value={num}
           onChange={handleNumChange}
           type="number"
-          placeholder="Type here your Monthly Expenses €"
+          placeholder="Type here your Monthly Expenses $"
           required
         />
         <Inputfield
