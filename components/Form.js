@@ -74,7 +74,7 @@ const Text = styled.p`
   justify-content: center;
 `;
 const Inputfield = styled.input`
-  width: 235px;
+  width: 250px;
   height: 25px;
 `;
 
