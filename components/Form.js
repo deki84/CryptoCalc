@@ -28,7 +28,7 @@ export default function Form({ onCalculatePrice, value }) {
       setNum1('');
       onCalculatePrice(0, 0);
       setShow(false);
-    }, 2000);
+    }, 20000);
   }
 
   return (
