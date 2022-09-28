@@ -28,7 +28,7 @@ export default function Form({ onCalculatePrice, value }) {
       setNum1('');
       onCalculatePrice(0, 0);
       setShow(false);
-    }, 3000);
+    }, 20000);
   }
 
   return (
@@ -43,7 +43,7 @@ export default function Form({ onCalculatePrice, value }) {
           value={num}
           onChange={handleNumChange}
           type="number"
-          placeholder="Type here your Monthly Expenses $"
+          placeholder="Type here your Monthly Expenses €"
           required
         />
         <Inputfield
@@ -64,7 +64,7 @@ export default function Form({ onCalculatePrice, value }) {
           Click me
         </Button>
         {show && value ? (
-          <Text>Your current value is {value} Month </Text>
+          <Text>Your current value is {value} Months </Text>
         ) : null}
       </StyledForm>
     </>

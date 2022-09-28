@@ -4,18 +4,18 @@ import Logo from '../public/Logo.png';
 import Form from '../components/Form';
 import { useState } from 'react';
 
-export default function Home() {
+export default function Home({ coins }) {
   let [value, setValue] = useState();
 
   function calculatePrice(value, expense) {
-    const bitcoin = 20000;
+    const bitcoin = coins.market_data.current_price.eur;
+    console.log(bitcoin);
     let result = 0;
     if (expense) {
       result = ((value * bitcoin) / expense).toFixed(0);
     }
     setValue(result);
   }
-
   return (
     <>
       <div>
