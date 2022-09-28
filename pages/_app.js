@@ -1,7 +1,6 @@
 import GlobalStyle from '../components/GlobalStyle';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Coins from '../components/Coins';
 
 function MyApp({ Component, pageProps }) {
   const [coins, setCoin] = useState();
