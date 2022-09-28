@@ -66,10 +66,6 @@ export default function Form({ onCalculatePrice, value }) {
         {show && value ? (
           <Text>Your current value is {value} Months </Text>
         ) : null}
-        <ButtonRefresh>Refresh for current Price</ButtonRefresh>
-        {show && value ? (
-          <OutputText>You can Live with that {value} Months </OutputText>
-        ) : null}
       </StyledForm>
     </>
   );
@@ -78,13 +74,13 @@ export default function Form({ onCalculatePrice, value }) {
 const Text = styled.p`
   display: flex;
   justify-content: center;
-  margin: 20px;
+  margin: 60px;
   border: none;
   align-items: center;
   border-radius: 10px;
   background-color: #d1c9c9;
   width: 280px;
-  height: 35px;
+  height: 60px;
 `;
 const Inputfield = styled.input`
   width: 250px;
@@ -101,18 +97,6 @@ const Button = styled.button`
   margin-top: 10px;
 `;
 
-const ButtonRefresh = styled.button`
-  display: none;
-  margin-left: 90px;
-  width: 150px;
-  height: 40px;
-  color: white;
-  background-color: black;
-  border: none;
-  margin-top: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-`;
 const OutputText = styled.p`
   display: flex;
   justify-content: center;
@@ -122,7 +106,7 @@ const OutputText = styled.p`
   border-radius: 10px;
   background-color: #d1c9c9;
   width: 280px;
-  height: 35px;
+  height: 60px;
 `;
 
 const StyledForm = styled.form`
