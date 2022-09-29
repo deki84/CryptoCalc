@@ -16,6 +16,7 @@ export default function Header() {
 const Div = styled.div`
   display: flex;
   justify-content: center;
+  margin: 60px;
 `;
 
 const Headline = styled.h1`
