@@ -2,6 +2,7 @@ import Layout from '../components/Layout';
 import React, { useState, useEffect } from 'react';
 import GlobalStyle from '../components/GlobalStyle';
 import axios from 'axios';
+import Navbar from '../components/Navbar';
 
 function MyApp({ Component, pageProps }) {
   const [coins, setCoins] = useState();

@@ -6,7 +6,10 @@ const GlobalStyle = createGlobalStyle`
 }
 body {
     margin: 0;
-    padding: 15px;
+    padding: 0;
+    font-family: 'Holtwood One SC', serif;
+    font-size: 10px;
+
     
 }
 `;
