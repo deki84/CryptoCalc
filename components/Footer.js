@@ -21,11 +21,11 @@ const Copyright = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-const Rights = styled.h4`
+const Rights = styled.p`
   font-family: 'PT Sans', sans-serif;
   margin: 0;
   margin-bottom: 30px;
 `;
-const FooterText = styled.h3`
-  margin: 0;
+const FooterText = styled.p`
+  margin: 5px;
 `;

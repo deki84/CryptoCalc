@@ -35,9 +35,9 @@ export default function Form({ onCalculatePrice, value }) {
 
   return (
     <>
-      <Div>
+      <Img>
         <Image layout="intrinsic" src={Logo} alt="something has failed " />
-      </Div>
+      </Img>
       <Headline>CryptoCalc</Headline>
       <StyledForm
         onSubmit={handleSubmit}
@@ -112,7 +112,7 @@ const StyledForm = styled.form`
   align-items: center;
   flex-direction: column;
 `;
-const Div = styled.div`
+const Img = styled.div`
   display: flex;
   justify-content: center;
   margin: 60px;
