@@ -1,5 +1,8 @@
 import styled from 'styled-components';
+import Image from 'next/image';
+import Logo from '../public/Logo.png';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Form({ onCalculatePrice, value }) {
   function handleSubmit(event) {
@@ -33,6 +36,10 @@ export default function Form({ onCalculatePrice, value }) {
 
   return (
     <>
+      <Div>
+        <Image layout="intrinsic" src={Logo} alt="something has failed " />
+      </Div>
+      <Headline>CryptoCalc</Headline>
       <StyledForm
         onSubmit={handleSubmit}
         onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
@@ -90,7 +97,7 @@ const Inputfield = styled.input`
 `;
 
 const Button = styled.button`
-  margin-left: 148px;
+  margin-left: 160px;
   width: 87px;
   height: 30px;
   color: white;
@@ -103,4 +110,15 @@ const StyledForm = styled.form`
   display: flex;
   align-items: center;
   flex-direction: column;
+`;
+const Div = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 60px;
+`;
+
+const Headline = styled.h1`
+  display: flex;
+  justify-content: center;
+ 
 `;

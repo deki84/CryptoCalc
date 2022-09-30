@@ -1,30 +1,61 @@
-import styled from 'styled-components';
-import Image from 'next/image';
-import Logo from '../public/Logo.png';
 import Navbar from './Navbar';
-
+import NavLink from 'next/link'
+import styled from 'styled-components';
+ 
 export default function Header() {
   return (
-    <div>
-      <Navbar />
-      <Div>
-        <Image layout="intrinsic" src={Logo} alt="something has failed " />
-      </Div>
-      <Headline>CryptoCalc</Headline>
-    </div>
-  );
-}
+    <>
+    <Div>
+      <StyleHeadlineLink>
+        <NavLink href = "/" > 
+      <a>Cryptocalc</a> 
+      </NavLink> </StyleHeadlineLink>
+      <CryptoStyle> <NavLink href = "/crypto">
+      <a>Crypto</a></NavLink>
+      </CryptoStyle>
+      <NewsStyle><NavLink href = "/news">
+            <a>News</a> 
+         </NavLink></NewsStyle>
+     </Div>
+  <Navbar/>
+  </>
+  )}
+
+const Div =styled.div`
+position: absolute;
+display:Flex;
+font-size: 14px;
 
 
 
 
-const Div = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 60px;
-`;
 
-const Headline = styled.h1`
-  display: flex;
-  justify-content: center;
-`;
+`
+
+
+
+const StyleHeadlineLink =styled.div`
+justify-self: center;
+margin-left: 70px;
+margin-top: 10px;
+
+
+
+` 
+
+
+
+
+const NewsStyle = styled.div`
+margin-top:10px;
+margin-left: 20px
+`
+
+
+const CryptoStyle = styled.div`
+margin-top: 10px;
+margin-left: 20px;
+`
+
+
+

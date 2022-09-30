@@ -15,18 +15,17 @@ const Navbar = () => {
           alt="something has failed "
         />
       </ImageIconHeadline>
-      <HeadlineNav>CryptoCalc</HeadlineNav>
-      <h3>Crypto</h3>
-      <h3> News</h3>
-    </HeadlineCrypto>
-  );
-};
+     </HeadlineCrypto>
+        
+  )}
 
 export default Navbar;
 
 const ImageIconHeadline = styled.div`
   align-self: center;
-  margin-top: 3px;
+  margin-right:315px;
+  
+ 
 `;
 
 const HeadlineCrypto = styled.div`
@@ -36,6 +35,3 @@ const HeadlineCrypto = styled.div`
   justify-content: space-evenly;
 `;
 
-const HeadlineNav = styled.h3`
-  align-self: center;
-`;

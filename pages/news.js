@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Crypto = () => {
+const News = () => {
   return (
     <div>
-      <CryptoHeadline>Crypto</CryptoHeadline>
+      <CryptoNews> News</CryptoNews>
     </div>
   );
 };
 
-export default Crypto;
+export default News;
 
-const CryptoHeadline = styled.h1`
+const CryptoNews = styled.h1`
   display: flex;
   justify-content: center;
 `;
