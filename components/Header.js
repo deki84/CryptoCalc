@@ -5,12 +5,12 @@ import styled from 'styled-components';
 export default function Header() {
   return (
     <>
-      <Div>
-        <CryptoCalcStyle>
+      <Nav>
+        <CryptoStyle>
           <Link href="/" passHref>
             <Linkto>Cryptocalc</Linkto>
           </Link>
-        </CryptoCalcStyle>
+        </CryptoStyle>
 
         <CryptoStyle>
           <Link href="/crypto" passHref>
@@ -18,37 +18,29 @@ export default function Header() {
           </Link>
         </CryptoStyle>
 
-        <NewsStyle>
+        <CryptoStyle>
           <Link href="/news" passHref>
             <Linkto>News</Linkto>
           </Link>
-        </NewsStyle>
-      </Div>
-      <Navbar />
+        </CryptoStyle>
+
+        <Navbar />
+      </Nav>
     </>
   );
 }
 const Linkto = styled.a`
   color: black;
-`;
-
-const Div = styled.nav`
-  position: absolute;
-  display: Flex;
-  font-size: 14px;
-`;
-const CryptoCalcStyle = styled.div`
-  color: black;
-  justify-self: center;
-
-  margin-left: 70px;
-  margin-top: 10px;
-`;
-const NewsStyle = styled.div`
-  margin-top: 10px;
   margin-left: 20px;
 `;
+
+const Nav = styled.nav`
+  position: relative;
+  display: flex;
+
+  justify-content: space-evenly; ;
+`;
+
 const CryptoStyle = styled.div`
-  margin-top: 10px;
-  margin-left: 20px;
+  margin: 10px;
 `;

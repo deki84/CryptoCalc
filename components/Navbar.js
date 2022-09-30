@@ -15,22 +15,22 @@ const Navbar = () => {
           alt="something has failed "
         />
       </ImageIconHeadline>
-     </HeadlineCrypto>
-        
-  )}
+    </HeadlineCrypto>
+  );
+};
 
 export default Navbar;
 
 const ImageIconHeadline = styled.div`
   align-self: center;
-  margin-right:315px;
+  margin-left: 10px;
 `;
-
 
 const HeadlineCrypto = styled.div`
   background-color: #d9d9d9;
   height: 42px;
   display: flex;
-  justify-content: space-evenly;
+  z-index: -1;
+  position: fixed;
+  width: 100%;
 `;
-

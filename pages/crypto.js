@@ -14,4 +14,5 @@ export default Crypto;
 const CryptoHeadline = styled.h1`
   display: flex;
   justify-content: center;
+  margin: 30px;
 `;

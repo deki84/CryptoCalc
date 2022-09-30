@@ -14,4 +14,5 @@ export default News;
 const CryptoNews = styled.h1`
   display: flex;
   justify-content: center;
+  margin: 30px;
 `;
