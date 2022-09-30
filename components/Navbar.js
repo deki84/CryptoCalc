@@ -24,9 +24,8 @@ export default Navbar;
 const ImageIconHeadline = styled.div`
   align-self: center;
   margin-right:315px;
-  
- 
 `;
+
 
 const HeadlineCrypto = styled.div`
   background-color: #d9d9d9;

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import Logo from '../public/Logo.png';
 import { useState } from 'react';
-import Link from 'next/link';
 
 export default function Form({ onCalculatePrice, value }) {
   function handleSubmit(event) {
@@ -79,6 +78,8 @@ export default function Form({ onCalculatePrice, value }) {
 }
 
 const Text = styled.p`
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
   display: flex;
   justify-content: center;
   border: none;
@@ -120,5 +121,4 @@ const Div = styled.div`
 const Headline = styled.h1`
   display: flex;
   justify-content: center;
- 
 `;
