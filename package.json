@@ -9,10 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "babel-plugin-styled-components": "^2.0.7",
+    "from": "^0.1.7",
+    "link": "^1.5.1",
     "next": "12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.4.0",
+    "react-router-dom": "^6.4.1",
+    "Router": "^2.1.0",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {

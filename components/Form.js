@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import Image from 'next/image';
+import Logo from '../public/Logo.png';
 import { useState } from 'react';
 
 export default function Form({ onCalculatePrice, value }) {
@@ -28,11 +30,15 @@ export default function Form({ onCalculatePrice, value }) {
       setNum1('');
       onCalculatePrice(0, 0);
       setShow(false);
-    }, 2000);
+    }, 20000);
   }
 
   return (
     <>
+      <Img>
+        <Image layout="intrinsic" src={Logo} alt="something has failed " />
+      </Img>
+      <Headline>CryptoCalc</Headline>
       <StyledForm
         onSubmit={handleSubmit}
         onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
@@ -58,7 +64,7 @@ export default function Form({ onCalculatePrice, value }) {
         <Button
           onClick={() => {
             setShow(true);
-            timeout();
+            // timeout();
           }}
         >
           Click me
@@ -72,8 +78,19 @@ export default function Form({ onCalculatePrice, value }) {
 }
 
 const Text = styled.p`
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
   display: flex;
   justify-content: center;
+  border: none;
+  margin: 60px;
+  border: none;
+  background-color: #d1ccc9;
+  border: none;
+  border-radius: 10px;
+  width: 250px;
+  height: 50px;
+  align-items: center;
 `;
 const Inputfield = styled.input`
   width: 250px;
@@ -81,7 +98,7 @@ const Inputfield = styled.input`
 `;
 
 const Button = styled.button`
-  margin-left: 148px;
+  margin-left: 160px;
   width: 87px;
   height: 30px;
   color: white;
@@ -94,4 +111,14 @@ const StyledForm = styled.form`
   display: flex;
   align-items: center;
   flex-direction: column;
+`;
+const Img = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 60px;
+`;
+
+const Headline = styled.h1`
+  display: flex;
+  justify-content: center;
 `;
