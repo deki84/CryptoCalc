@@ -3,9 +3,20 @@ import styled from 'styled-components';
 
 const Crypto = () => {
   return (
-    <div>
-      <CryptoHeadline>Crypto</CryptoHeadline>
-    </div>
+    <>
+      <div>
+        <div>
+          <h1>Search a currency</h1>
+          <form>
+            <input type="text" placeholder="Search" />
+          </form>
+        </div>
+      </div>
+
+      <div>
+        <CryptoHeadline>Crypto</CryptoHeadline>
+      </div>
+    </>
   );
 };
 

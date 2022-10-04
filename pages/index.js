@@ -5,10 +5,12 @@ export default function Home({ coins }) {
   let [value, setValue] = useState();
 
   function calculatePrice(value, expense) {
-    const bitcoin = coins.market_data.current_price.eur;
+    const crypto = coins[0];
+    const priceCrypto = crypto.current_price;
+    console.log(crypto.current_price);
     let result = 0;
     if (expense) {
-      result = ((value * bitcoin) / expense).toFixed(0);
+      result = ((value * priceCrypto) / expense).toFixed(0);
     }
     setValue(result);
   }
