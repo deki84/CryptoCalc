@@ -8,30 +8,34 @@ const Crypto = ({ filteredCoins, handleChange }) => {
       <div>
         <CryptoHeadline>Crypto</CryptoHeadline>
       </div>
-      <div>
-        <div>
-          <h1>Search a currency</h1>
-          <form>
-            <input type="text" placeholder="Search" onChange={handleChange} />
-          </form>
-        </div>
 
-        {filteredCoins.map((coin) => {
-          console.log(coin);
-          return (
-            <Coin
-              key={coin.id}
-              name={coin.name}
-              image={coin.image}
-              symbol={coin.symbol}
-              marketcap={coin.market_cap}
-              price={coin.current_price}
-              priceChange={coin.price_change_percentage_24h}
-              volume={coin.total_volume}
+      <CoinContainer>
+        <SearchCoin>
+          <form>
+            <CoinInput
+              type="text"
+              placeholder="Search"
+              onChange={handleChange}
             />
-          );
-        })}
-      </div>
+          </form>{' '}
+        </SearchCoin>
+      </CoinContainer>
+
+      {filteredCoins.map((coin) => {
+        console.log(coin);
+        return (
+          <Coin
+            key={coin.id}
+            name={coin.name}
+            image={coin.image}
+            symbol={coin.symbol}
+            marketcap={coin.market_cap}
+            price={coin.current_price}
+            priceChange={coin.price_change_percentage_24h}
+            volume={coin.total_volume}
+          />
+        );
+      })}
     </>
   );
 };
@@ -42,4 +46,29 @@ const CryptoHeadline = styled.h1`
   display: flex;
   justify-content: center;
   margin: 30px;
+`;
+
+const CoinContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+  color: #fff;
+`;
+const SearchCoin = styled.div`
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const CoinInput = styled.input`
+  padding-left: 16px;
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  border: none;
 `;
