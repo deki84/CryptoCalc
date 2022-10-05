@@ -1,7 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
 
-const Coin = ({ name, image, symbol, price, volume }) => {
+const Coin = ({
+  name,
+  image,
+  symbol,
+  price,
+  volume,
+  priceChange,
+  marketcap,
+}) => {
   return (
     <div>
       <div>
@@ -10,8 +18,17 @@ const Coin = ({ name, image, symbol, price, volume }) => {
           <h1>{name}</h1>
           <p>{symbol}</p>
         </div>
-        <p>€{price}</p>
-        <p>€{volume}</p>
+
+        <div>
+          <p>€{price}</p>
+          <p>€{volume.toLocaleString()}</p>
+          {priceChange < 0 ? (
+            <p>{priceChange.toFixed(2)}%</p>
+          ) : (
+            <p>{priceChange.toFixed(2)}%</p>
+          )}
+          <p>Mkt Cap: €{marketcap.toLocaleString()}</p>
+        </div>
       </div>
     </div>
   );

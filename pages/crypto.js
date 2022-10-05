@@ -2,9 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import Coin from '../components/Coin';
 
-const Crypto = ({ coins, filteredCoins, handleChange }) => {
+const Crypto = ({ filteredCoins, handleChange }) => {
   return (
     <>
+      <div>
+        <CryptoHeadline>Crypto</CryptoHeadline>
+      </div>
       <div>
         <div>
           <h1>Search a currency</h1>
@@ -21,15 +24,13 @@ const Crypto = ({ coins, filteredCoins, handleChange }) => {
               name={coin.name}
               image={coin.image}
               symbol={coin.symbol}
-              volume={coin.market_cap}
+              marketcap={coin.market_cap}
               price={coin.current_price}
+              priceChange={coin.price_change_percentage_24h}
+              volume={coin.total_volume}
             />
           );
         })}
-      </div>
-
-      <div>
-        <CryptoHeadline>Crypto</CryptoHeadline>
       </div>
     </>
   );
