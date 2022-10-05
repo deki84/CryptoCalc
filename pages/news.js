@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const News = () => {
+const News = ({ coins }) => {
+  console.log(coins);
   return (
     <div>
       <CryptoNews> News</CryptoNews>
