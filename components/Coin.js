@@ -16,7 +16,7 @@ const Coin = ({
       <CoinRow>
         <Coins>
           <ImageContainer>
-            <Image width={30} height={30} src={image} alt="crypto " />
+            <Image width={20} height={20} src={image} alt="crypto " />
           </ImageContainer>
           <CoinName>{name}</CoinName>
           <CoinSymbol>{symbol}</CoinSymbol>
@@ -25,12 +25,14 @@ const Coin = ({
         <CoinData>
           <CoinPrice>€{price}</CoinPrice>
           <CoinVolume>€{volume.toLocaleString()}</CoinVolume>
-          {priceChange < 0 ? (
-            <PercentChangeRed>{priceChange.toFixed(2)}%</PercentChangeRed>
-          ) : (
-            <PercentChangeGreen>{priceChange.toFixed(2)}%</PercentChangeGreen>
-          )}
-          <MarketCap>Mkt Cap: €{marketcap.toLocaleString()}</MarketCap>
+          <CoinPercentage>
+            {priceChange < 0 ? (
+              <PercentChangeRed>{priceChange.toFixed(2)}%</PercentChangeRed>
+            ) : (
+              <PercentChangeGreen>{priceChange.toFixed(2)}%</PercentChangeGreen>
+            )}
+          </CoinPercentage>
+          <MarketCap>€{marketcap.toLocaleString()}</MarketCap>
         </CoinData>
       </CoinRow>
     </CoinContainer>
@@ -48,44 +50,55 @@ const CoinRow = styled.div`
   flex-direction: row;
   justify-items: start;
   align-items: center;
-  height: 80px;
+  height: 50px;
   border-bottom: 1px solid #d7d7d7;
-  width: 200px;
+  width: 360px;
 `;
 
 const Coins = styled.div`
   display: flex;
   align-items: center;
-  padding-right: 24px;
-  min-width: 300px;
+  min-width: 140px;
+  margin-top: 10px;
 `;
 
 const CoinName = styled.h1`
-  font-size: 16px;
-  width: 150px;
+  font-size: 8px;
+  width: 70px;
+  margin-left: 12px;
 `;
 const ImageContainer = styled.div`
-  margin-right: 10px;
+  margin-top: 5px;
 `;
 const CoinSymbol = styled.p`
   text-transform: uppercase;
+  font-size: 7px;
+  margin-right: 10px;
 `;
 
 const CoinData = styled.div`
   display: flex;
   text-align: center;
   justify-content: space-between;
-  width: 100%;
 `;
 
 const CoinPrice = styled.p`
-  width: 110px;
+  width: 10px;
+  margin-top: 20px;
+  margin-right: 35px;
 `;
 const CoinVolume = styled.p`
-  width: 230px;
+  width: 180px;
+  margin-top: 20px;
 `;
 const MarketCap = styled.p`
   width: 155px;
+  margin-top: 20px;
+`;
+
+const CoinPercentage = styled.div`
+  display: flex;
+  margin-top: 10px;
 `;
 
 const PercentChangeRed = styled.p`

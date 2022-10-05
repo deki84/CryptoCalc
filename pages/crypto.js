@@ -9,7 +9,7 @@ const Crypto = ({ filteredCoins, handleChange }) => {
         <CryptoHeadline>Crypto</CryptoHeadline>
       </div>
 
-      <CoinContainer>
+      <CoinSearchContainer>
         <SearchCoin>
           <form>
             <CoinInput
@@ -17,9 +17,9 @@ const Crypto = ({ filteredCoins, handleChange }) => {
               placeholder="Search"
               onChange={handleChange}
             />
-          </form>{' '}
+          </form>
         </SearchCoin>
-      </CoinContainer>
+      </CoinSearchContainer>
 
       {filteredCoins.map((coin) => {
         console.log(coin);
@@ -48,7 +48,7 @@ const CryptoHeadline = styled.h1`
   margin: 30px;
 `;
 
-const CoinContainer = styled.div`
+const CoinSearchContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,10 +64,10 @@ const SearchCoin = styled.div`
 `;
 
 const CoinInput = styled.input`
-  padding-left: 16px;
-  width: 300px;
+  width: 150px;
+  text-align: center;
   height: 50px;
-  border-radius: 10px;
+  border-radius: 50px;
   background-color: black;
   color: white;
   border: none;
