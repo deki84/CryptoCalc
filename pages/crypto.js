@@ -20,6 +20,10 @@ const Crypto = ({ filteredCoins, handleChange }) => {
           </form>
         </SearchCoin>
       </CoinSearchContainer>
+      <CoinsHeadline>
+        <p>Coin</p> <p>Symbol</p> <p>Price</p> <p>Volume</p>
+        <p>Change(24h)</p> <p>Mkt.Cap</p>
+      </CoinsHeadline>
 
       {filteredCoins.map((coin) => {
         console.log(coin);
@@ -45,17 +49,29 @@ export default Crypto;
 const CryptoHeadline = styled.h1`
   display: flex;
   justify-content: center;
-  margin: 30px;
+  margin: 0;
+  padding: 80px 0 40px;
 `;
 
-const CoinSearchContainer = styled.div`
+const CoinsHeadline = styled.span`
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  justify-content: space-evenly;
+  margin-left: 20px;
+  border-bottom: 1px solid #d7d7d7;
+  width: 500px;
+`;
+
+const CoinSearchContainer = styled.span`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 24px;
+  margin: 0;
+  margin-bottom: 30px;
+
   color: #fff;
 `;
-const SearchCoin = styled.div`
+const SearchCoin = styled.span`
   margin-bottom: 64px;
   display: flex;
   flex-direction: column;
