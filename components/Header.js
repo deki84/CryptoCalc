@@ -48,10 +48,10 @@ const ImageIconHeadline = styled.div`
 
 const HeadlineCrypto = styled.div`
   background-color: #d9d9d9;
-  height: 45px;
   display: flex;
   z-index: -1;
   position: fixed;
+  margin-top: -2px;
   width: 100%;
 `;
 

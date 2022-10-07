@@ -64,7 +64,7 @@ export default function Form({ onCalculatePrice, value }) {
         <Button
           onClick={() => {
             setShow(true);
-            // timeout();
+            timeout();
           }}
         >
           Click me
