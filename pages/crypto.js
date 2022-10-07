@@ -27,9 +27,8 @@ export default function Crypto({ filteredCoins, handleChange }) {
         <CoinCategory>Change(24h)</CoinCategory>
         {filteredCoins.map((coin) => {
           return (
-            <Coin1>
+            <Coin1 key={coin.id}>
               <Coin
-                key={coin.id}
                 name={coin.name}
                 image={coin.image}
                 symbol={coin.symbol}
