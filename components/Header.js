@@ -1,11 +1,24 @@
-import Navbar from './Navbar';
-import Link from 'next/link';
+import React from 'react';
 import styled from 'styled-components';
+import Image from 'next/image';
+import Logo from '../public/Logo.png';
+import Link from 'next/link';
 
 export default function Header() {
   return (
     <>
-      <Nav>
+      <Navbar>
+        <HeadlineCrypto>
+          <ImageIconHeadline>
+            <Image
+              layout="fixed"
+              width={30}
+              height={30}
+              src={Logo}
+              alt="something has failed "
+            />
+          </ImageIconHeadline>
+        </HeadlineCrypto>
         <CryptoStyle>
           <Link href="/" passHref>
             <Linkto>Cryptocalc</Linkto>
@@ -23,21 +36,37 @@ export default function Header() {
             <Linkto>News</Linkto>
           </Link>
         </CryptoStyle>
-
-        <Navbar />
-      </Nav>
+      </Navbar>
     </>
   );
 }
+
+const ImageIconHeadline = styled.div`
+  align-self: center;
+  margin-left: 10px;
+`;
+
+const HeadlineCrypto = styled.div`
+  background-color: #d9d9d9;
+  display: flex;
+  z-index: -1;
+  position: fixed;
+  margin-top: -2px;
+  width: 100%;
+`;
+
 const Linkto = styled.a`
   color: black;
   margin-left: 20px;
+  display: flex;
 `;
 
-const Nav = styled.nav`
-  position: relative;
+const Navbar = styled.nav`
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  margin-top: 0;
   display: flex;
-
   justify-content: space-evenly; ;
 `;
 

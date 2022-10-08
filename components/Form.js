@@ -64,7 +64,7 @@ export default function Form({ onCalculatePrice, value }) {
         <Button
           onClick={() => {
             setShow(true);
-            // timeout();
+            timeout();
           }}
         >
           Click me
@@ -82,9 +82,7 @@ const Text = styled.p`
   font-size: 14px;
   display: flex;
   justify-content: center;
-  border: none;
   margin: 60px;
-  border: none;
   background-color: #d1ccc9;
   border: none;
   border-radius: 10px;
@@ -115,7 +113,8 @@ const StyledForm = styled.form`
 const Img = styled.div`
   display: flex;
   justify-content: center;
-  margin: 60px;
+  margin: 0px;
+  padding: 80px;
 `;
 
 const Headline = styled.h1`
