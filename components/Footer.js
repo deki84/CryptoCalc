@@ -2,12 +2,10 @@ import styled from 'styled-components';
 
 export default function Footer() {
   return (
-    <nav>
-      <Copyright>
-        <FooterText>CryptoCalc</FooterText>
-        <Rights>All Rights Reserved 2022</Rights>
-      </Copyright>
-    </nav>
+    <Copyright>
+      <FooterText>CryptoCalc</FooterText>
+      <Rights>All Rights Reserved 2022</Rights>
+    </Copyright>
   );
 }
 const Copyright = styled.div`

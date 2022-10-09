@@ -42,16 +42,14 @@ export default function Header() {
 }
 
 const ImageIconHeadline = styled.div`
-  align-self: center;
-  margin-left: 10px;
+  display: flex;
+  place-items: center;
 `;
 
 const HeadlineCrypto = styled.div`
-  background-color: #d9d9d9;
   display: flex;
   z-index: -1;
   position: fixed;
-  margin-top: -2px;
   width: 100%;
 `;
 
@@ -63,11 +61,14 @@ const Linkto = styled.a`
 
 const Navbar = styled.nav`
   position: fixed;
-  width: 100%;
-  align-items: center;
-  margin-top: 0;
   display: flex;
-  justify-content: space-evenly; ;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-left: 20px;
+  width: 100%;
+  height: 40px;
+  background-color: #d9d9d9;
+  z-index: 1;
 `;
 
 const CryptoStyle = styled.div`

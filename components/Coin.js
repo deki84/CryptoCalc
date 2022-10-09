@@ -1,13 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
 
 export default function Coin({ name, image, symbol, price, priceChange }) {
   return (
     <CoinRow>
       <ImgNameContainer>
         <span>
-          <Images width={20} height={20} src={image} alt="crypto" />
+          <Images
+            width={20}
+            height={20}
+            src={image}
+            alt="The image could not be loaded"
+          />
         </span>
         <CoinName>{name}</CoinName>
       </ImgNameContainer>
@@ -31,6 +35,7 @@ const ImgNameContainer = styled.span`
 
 const Images = styled.img`
   z-index: -1;
+  margin-left: 10px;
 `;
 
 const CoinRow = styled.div`
