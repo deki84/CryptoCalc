@@ -17,7 +17,7 @@ export default function News() {
   return (
     <>
       <CryptoNews>News</CryptoNews>
-      <div>
+      <MainContent>
         {articles.map((article) => {
           return (
             <NewsListStyling key={article.id}>
@@ -30,10 +30,14 @@ export default function News() {
             </NewsListStyling>
           );
         })}
-      </div>
+      </MainContent>
     </>
   );
 }
+
+const MainContent = styled.main`
+  margin: 3px;
+`;
 
 const NewsListStyling = styled.span`
   display: Flex;
