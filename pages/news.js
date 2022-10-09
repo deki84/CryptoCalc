@@ -5,32 +5,29 @@ import NewsList from '../components/NewsList';
 import { useState, useEffect } from 'react';
 
 export default function News() {
-  <CryptoNews>News</CryptoNews>;
-
   const [articles, setArticles] = useState([]);
 
-  const newsApi =
-    'https://newsapi.org/v2/everything?q=crypto&apiKey=1728cdee74b84c73a7a499ccbe61dd69';
-
   useEffect(() => {
-    const getArticles = async () => {
-      const response = await axios.get(newsApi);
-      setArticles(response.data.articles);
+    const getArticles = async (page) => {
+      const response = await axios.get('/api/hello');
+      setArticles(response.data);
     };
     getArticles();
   }, []);
   return (
     <>
+      <CryptoNews>News</CryptoNews>
       <div>
         {articles.map((article) => {
           return (
-            <NewsList
-              key={article.id}
-              title={article.title}
-              description={article.description}
-              url={article.url}
-              urlToImage={article.urlToImage}
-            />
+            <NewsListStyling key={article.id}>
+              <NewsList
+                title={article.title}
+                description={article.description}
+                url={article.url}
+                urlToImage={article.urlToImage}
+              />
+            </NewsListStyling>
           );
         })}
       </div>
@@ -38,8 +35,16 @@ export default function News() {
   );
 }
 
+const NewsListStyling = styled.span`
+  display: Flex;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+`;
+
 const CryptoNews = styled.h1`
-  display: flex;
+  display: fixed;
   justify-content: center;
   margin: 0;
   padding: 70px;
