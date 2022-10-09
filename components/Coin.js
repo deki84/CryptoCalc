@@ -35,6 +35,7 @@ const ImgNameContainer = styled.span`
 
 const Images = styled.img`
   z-index: -1;
+  margin-left: 10px;
 `;
 
 const CoinRow = styled.div`

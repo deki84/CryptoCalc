@@ -8,7 +8,7 @@ export default function News() {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    const getArticles = async (page) => {
+    const getArticles = async () => {
       const response = await axios.get('/api/hello');
       setArticles(response.data);
     };
