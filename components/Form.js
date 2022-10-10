@@ -63,6 +63,11 @@ export default function Form({ coins }) {
         />
         <select>
           <option>select coin</option>
+          {coins.map(() => {
+            <option key={coins.id} value={coins.name}>
+              {coins.name}
+            </option>;
+          })}
         </select>
         <Button
           onClick={() => {
