@@ -8,7 +8,7 @@ export default function NewsList({ title, description, url, urlToImage }) {
         width={240}
         height={150}
         src={urlToImage}
-        alt="The image could not be loaded"
+        alt="desription Image to the url "
       />
       <h3>
         <a href={url}>{title}</a>

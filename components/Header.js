@@ -15,7 +15,7 @@ export default function Header() {
               width={30}
               height={30}
               src={Logo}
-              alt="something has failed "
+              alt="Logo"
             />
           </ImageIconHeadline>
         </HeadlineCrypto>

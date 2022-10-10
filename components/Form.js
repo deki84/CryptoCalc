@@ -2,17 +2,24 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import Logo from '../public/Logo.png';
 import { useState } from 'react';
+import calculation from '../utils/calculation';
 
-export default function Form({ onCalculatePrice, value }) {
+export default function Form({ coins }) {
+  const [value, setValue] = useState();
+  const [selectedCoinName, setSelectedCoinName] = useState('');
+  const [disableButton, setDisableButton] = useState(true);
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
-    const expenses = Number(form.expenses.value);
+    const expense = Number(form.expenses.value);
     const cryptovalue = Number(form.cryptovalue.value);
+    const selectedCoin = coins.find((coin) => coin.name == selectedCoinName);
 
-    onCalculatePrice(cryptovalue, expenses);
+    const calculatedMonths = calculation(cryptovalue, expense, selectedCoin);
+    setValue(calculatedMonths);
   }
-  const [show, setShow] = useState(false);
+
+  const [show, setShow] = useState(true);
   const [num, setNum] = useState();
   const handleNumChange = (event) => {
     const limit = 9;
@@ -28,7 +35,6 @@ export default function Form({ onCalculatePrice, value }) {
     setTimeout(function () {
       setNum('');
       setNum1('');
-      onCalculatePrice(0, 0);
       setShow(false);
     }, 20000);
   }
@@ -36,7 +42,7 @@ export default function Form({ onCalculatePrice, value }) {
   return (
     <>
       <Img>
-        <Image layout="intrinsic" src={Logo} alt="something has failed " />
+        <Image layout="intrinsic" src={Logo} alt="Logo" />
       </Img>
       <Headline>CryptoCalc</Headline>
       <StyledForm
@@ -49,6 +55,8 @@ export default function Form({ onCalculatePrice, value }) {
           value={num}
           onChange={handleNumChange}
           type="number"
+          step="0"
+          min="0"
           placeholder="Type here your Monthly Expenses €"
           required
         />
@@ -58,10 +66,27 @@ export default function Form({ onCalculatePrice, value }) {
           value={num1}
           onChange={handleNumChange1}
           type="number"
+          step="0"
+          min="0"
           placeholder="Type here your crypto value "
           required
         />
+        <DropMenu
+          required
+          onChange={(e) => {
+            setSelectedCoinName(e.target.value);
+            setDisableButton(false);
+          }}
+        >
+          <option>select coin</option>
+          {coins.map((coin) => (
+            <option key={coin.id} value={coin.name}>
+              {coin.name}
+            </option>
+          ))}
+        </DropMenu>
         <Button
+          disabled={disableButton}
           onClick={() => {
             setShow(true);
             timeout();
@@ -76,6 +101,16 @@ export default function Form({ onCalculatePrice, value }) {
     </>
   );
 }
+
+const DropMenu = styled.select`
+  background-color: whitesmoke;
+  color: black;
+  width: 180px;
+  margin-bottom: 20px;
+  margin-left: 70px;
+  text-align: center;
+  border-radius: 4px;
+`;
 
 const Text = styled.p`
   font-family: 'PT Sans', sans-serif;
@@ -93,6 +128,10 @@ const Text = styled.p`
 const Inputfield = styled.input`
   width: 250px;
   height: 25px;
+
+  border-bottom: 1px solid grey;
+  border-radius: 4px;
+  background-color: white;
 `;
 
 const Button = styled.button`

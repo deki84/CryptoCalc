@@ -10,7 +10,7 @@ export default function Coin({ name, image, symbol, price, priceChange }) {
             width={20}
             height={20}
             src={image}
-            alt="The image could not be loaded"
+            alt={`Symbol of ${name}`}
           />
         </span>
         <CoinName>{name}</CoinName>
@@ -44,6 +44,7 @@ const CoinRow = styled.div`
   grid-template-columns: repeat(4, 23%);
   height: 70px;
   border-bottom: 1px solid #d7d7d7;
+  margin: 10px;
 `;
 
 const CoinName = styled.h1`
