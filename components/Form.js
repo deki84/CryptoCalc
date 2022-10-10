@@ -100,7 +100,7 @@ export default function Form({ coins }) {
 }
 
 const DropMenu = styled.select`
-  background-color: white;
+  background-color: whitesmoke;
   color: black;
   width: 180px;
   margin-bottom: 20px;
@@ -125,6 +125,10 @@ const Text = styled.p`
 const Inputfield = styled.input`
   width: 250px;
   height: 25px;
+
+  border-bottom: 1px solid grey;
+  border-radius: 4px;
+  background-color: white;
 `;
 
 const Button = styled.button`
