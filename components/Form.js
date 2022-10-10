@@ -2,20 +2,20 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import Logo from '../public/Logo.png';
 import { useState } from 'react';
-import calculation from './utils/calculation';
+import calculation from '../pages/utils/calculation';
 
 export default function Form({ coins }) {
   const [value, setValue] = useState();
   const [selectedCoinName, setSelectedCoinName] = useState('');
-  const [disableButton, setdisableButton] = useState(true);
+  const [disableButton, setDisableButton] = useState(true);
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
     const expense = Number(form.expenses.value);
     const cryptovalue = Number(form.cryptovalue.value);
-    const selectedCoin = coins.filter((coin) => coin.name == selectedCoinName);
+    const selectedCoin = coins.find((coin) => coin.name == selectedCoinName);
 
-    const calculatedMonths = calculation(cryptovalue, expense, selectedCoin[0]);
+    const calculatedMonths = calculation(cryptovalue, expense, selectedCoin);
     setValue(calculatedMonths);
   }
 
@@ -71,9 +71,10 @@ export default function Form({ coins }) {
         />
         <DropMenu
           required
-          onChange={(e) =>
-            setSelectedCoinName(e.target.value, setdisableButton(false))
-          }
+          onChange={(e) => {
+            setSelectedCoinName(e.target.value);
+            setDisableButton(false);
+          }}
         >
           <option>select coin</option>
           {coins.map((coin) => (

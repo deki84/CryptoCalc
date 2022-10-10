@@ -6,7 +6,12 @@ export default function Coin({ name, image, symbol, price, priceChange }) {
     <CoinRow>
       <ImgNameContainer>
         <span>
-          <Images width={20} height={20} src={image} alt="Image" />
+          <Images
+            width={20}
+            height={20}
+            src={image}
+            alt={`Symbol of ${name}`}
+          />
         </span>
         <CoinName>{name}</CoinName>
       </ImgNameContainer>
