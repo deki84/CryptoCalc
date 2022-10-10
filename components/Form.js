@@ -6,11 +6,16 @@ import calculation from './utils/calculation';
 
 export default function Form({ coins }) {
   const [value, setValue] = useState();
+  const [selectedCoinName, setSelectedCoinName] = useState('');
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
     const expense = Number(form.expenses.value);
     const cryptovalue = Number(form.cryptovalue.value);
+    const selectedCoin = coins.filter((coin) => coin.name == selectedCoinName);
+
+    const calculatedMonths = calculation(cryptovalue, expense, selectedCoin[0]);
+    setNum(calculatedMonths);
   }
   const [show, setShow] = useState(false);
   const [num, setNum] = useState();
