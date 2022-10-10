@@ -54,7 +54,8 @@ export default function Form({ coins }) {
           name="expenses"
           value={num}
           onChange={handleNumChange}
-          type="decimal"
+          type="number"
+          step="0"
           min="0"
           placeholder="Type here your Monthly Expenses €"
           required
@@ -64,7 +65,8 @@ export default function Form({ coins }) {
           name="cryptovalue"
           value={num1}
           onChange={handleNumChange1}
-          type="decimal"
+          type="number"
+          step="0"
           min="0"
           placeholder="Type here your crypto value "
           required
