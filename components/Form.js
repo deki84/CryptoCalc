@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import Logo from '../public/Logo.png';
 import { useState } from 'react';
-import calculation from '../pages/utils/calculation';
+import calculation from '../utils/calculation';
 
 export default function Form({ coins }) {
   const [value, setValue] = useState();
