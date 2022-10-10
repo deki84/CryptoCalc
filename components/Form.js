@@ -2,15 +2,15 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import Logo from '../public/Logo.png';
 import { useState } from 'react';
+import calculation from './utils/calculation';
 
-export default function Form({ onCalculatePrice, value }) {
+export default function Form({ coins }) {
+  const [value, setValue] = useState();
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
-    const expenses = Number(form.expenses.value);
+    const expense = Number(form.expenses.value);
     const cryptovalue = Number(form.cryptovalue.value);
-
-    onCalculatePrice(cryptovalue, expenses);
   }
   const [show, setShow] = useState(false);
   const [num, setNum] = useState();
@@ -61,6 +61,9 @@ export default function Form({ onCalculatePrice, value }) {
           placeholder="Type here your crypto value "
           required
         />
+        <select>
+          <option>select coin</option>
+        </select>
         <Button
           onClick={() => {
             setShow(true);
