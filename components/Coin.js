@@ -39,6 +39,7 @@ const CoinRow = styled.div`
   grid-template-columns: repeat(4, 23%);
   height: 70px;
   border-bottom: 1px solid #d7d7d7;
+  margin: 10px;
 `;
 
 const CoinName = styled.h1`
