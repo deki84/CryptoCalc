@@ -6,12 +6,7 @@ export default function Coin({ name, image, symbol, price, priceChange }) {
     <CoinRow>
       <ImgNameContainer>
         <span>
-          <Images
-            width={20}
-            height={20}
-            src={image}
-            alt="The image could not be loaded"
-          />
+          <Images width={20} height={20} src={image} alt="Image" />
         </span>
         <CoinName>{name}</CoinName>
       </ImgNameContainer>
