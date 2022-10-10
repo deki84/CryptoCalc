@@ -7,6 +7,7 @@ import calculation from './utils/calculation';
 export default function Form({ coins }) {
   const [value, setValue] = useState();
   const [selectedCoinName, setSelectedCoinName] = useState('');
+  const [disableButton, setdisableButton] = useState(true);
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
@@ -15,9 +16,10 @@ export default function Form({ coins }) {
     const selectedCoin = coins.filter((coin) => coin.name == selectedCoinName);
 
     const calculatedMonths = calculation(cryptovalue, expense, selectedCoin[0]);
-    setNum(calculatedMonths);
+    setValue(calculatedMonths);
   }
-  const [show, setShow] = useState(false);
+
+  const [show, setShow] = useState(true);
   const [num, setNum] = useState();
   const handleNumChange = (event) => {
     const limit = 9;
@@ -33,7 +35,6 @@ export default function Form({ coins }) {
     setTimeout(function () {
       setNum('');
       setNum1('');
-      onCalculatePrice(0, 0);
       setShow(false);
     }, 20000);
   }
@@ -41,7 +42,7 @@ export default function Form({ coins }) {
   return (
     <>
       <Img>
-        <Image layout="intrinsic" src={Logo} alt="something has failed " />
+        <Image layout="intrinsic" src={Logo} alt="Logo" />
       </Img>
       <Headline>CryptoCalc</Headline>
       <StyledForm
@@ -53,7 +54,8 @@ export default function Form({ coins }) {
           name="expenses"
           value={num}
           onChange={handleNumChange}
-          type="number"
+          type="decimal"
+          min="0"
           placeholder="Type here your Monthly Expenses €"
           required
         />
@@ -62,19 +64,26 @@ export default function Form({ coins }) {
           name="cryptovalue"
           value={num1}
           onChange={handleNumChange1}
-          type="number"
+          type="decimal"
+          min="0"
           placeholder="Type here your crypto value "
           required
         />
-        <select>
+        <DropMenu
+          required
+          onChange={(e) =>
+            setSelectedCoinName(e.target.value, setdisableButton(false))
+          }
+        >
           <option>select coin</option>
-          {coins.map(() => {
-            <option key={coins.id} value={coins.name}>
-              {coins.name}
-            </option>;
-          })}
-        </select>
+          {coins.map((coin) => (
+            <option key={coin.id} value={coin.name}>
+              {coin.name}
+            </option>
+          ))}
+        </DropMenu>
         <Button
+          disabled={disableButton}
           onClick={() => {
             setShow(true);
             timeout();
@@ -89,6 +98,15 @@ export default function Form({ coins }) {
     </>
   );
 }
+
+const DropMenu = styled.select`
+  background-color: white;
+  width: 180px;
+  margin-bottom: 20px;
+  margin-left: 70px;
+  text-align: center;
+  border-radius: 4px;
+`;
 
 const Text = styled.p`
   font-family: 'PT Sans', sans-serif;
