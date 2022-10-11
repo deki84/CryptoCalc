@@ -68,7 +68,7 @@ export default function Form({ coins }) {
           type="number"
           step="0"
           min="0"
-          placeholder="Type here your crypto value "
+          placeholder="Type here your crypto count "
           required
         />
         <DropMenu
