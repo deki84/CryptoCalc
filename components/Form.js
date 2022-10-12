@@ -15,7 +15,11 @@ export default function Form({ coins }) {
     const cryptovalue = Number(form.cryptovalue.value);
     const selectedCoin = coins.find((coin) => coin.name == selectedCoinName);
 
-    const calculatedMonths = calculation(cryptovalue, expense, selectedCoin);
+    const calculatedMonths = calculation(
+      cryptovalue,
+      expense,
+      selectedCoin.current_price
+    );
     setValue(calculatedMonths);
   }
 
@@ -31,13 +35,6 @@ export default function Form({ coins }) {
     const limit = 9;
     setNum1(event.target.value.slice(0, limit));
   };
-  function timeout() {
-    setTimeout(function () {
-      setNum('');
-      setNum1('');
-      setShow(false);
-    }, 20000);
-  }
 
   return (
     <>
@@ -47,7 +44,7 @@ export default function Form({ coins }) {
       <Headline>CryptoCalc</Headline>
       <StyledForm
         onSubmit={handleSubmit}
-        onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
+        onKeyPress={(e) => !/[0.1-9.9]/.test(e.key) && e.preventDefault()}
       >
         <Inputfield
           id="expenses"
@@ -66,8 +63,8 @@ export default function Form({ coins }) {
           value={num1}
           onChange={handleNumChange1}
           type="number"
-          step="0"
-          min="0"
+          step="any"
+          min="any"
           placeholder="Type here your crypto count "
           required
         />
@@ -89,7 +86,6 @@ export default function Form({ coins }) {
           disabled={disableButton}
           onClick={() => {
             setShow(true);
-            timeout();
           }}
         >
           Click me
