@@ -15,7 +15,11 @@ export default function Form({ coins }) {
     const cryptovalue = Number(form.cryptovalue.value);
     const selectedCoin = coins.find((coin) => coin.name == selectedCoinName);
 
-    const calculatedMonths = calculation(cryptovalue, expense, selectedCoin);
+    const calculatedMonths = calculation(
+      cryptovalue,
+      expense,
+      selectedCoin.current_price
+    );
     setValue(calculatedMonths);
   }
 
