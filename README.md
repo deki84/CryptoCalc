@@ -10,7 +10,7 @@ https://user-images.githubusercontent.com/35610295/195830947-ccadbc0f-9dd3-437e-
 
 ### Deployment
 
-You can have a look at the last update of CatYummy on Vercel: [DemoVersion](https://capstone-project-deki84.vercel.app/)
+You can have a look at the last update of CryptoCalc on Vercel: [DemoVersion](https://capstone-project-deki84.vercel.app/)
 
 ### Tech Stack
 
