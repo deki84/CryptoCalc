@@ -1,34 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#  CryptoCalc
 
-## Getting Started
+<img width="378" alt="Screenshot 2022-10-14 at 12 42 29" src="https://user-images.githubusercontent.com/35610295/195828464-36baf1e2-ecb2-4214-b7d0-553664453740.png">
 
-First, run the development server:
+## Capstone Project of the IT bootcamp at neuefische
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+CryptoCalc gives users the option to enter a cryptocurrency and monthly expenses, and the app calculates how many months you can live off your cryptocurrency without having to access your savings account.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+https://user-images.githubusercontent.com/35610295/195830947-ccadbc0f-9dd3-437e-892d-676813a6a462.mov
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Deployment
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+You can have a look at the last update of CatYummy on Vercel: [DemoVersion](https://capstone-project-deki84.vercel.app/)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Tech Stack
 
-## Learn More
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [styled components](https://styled-components.com/)
+- [axios](https://axios-http.com/)
+- [CoinGecko API](https://www.coingecko.com/en/api)
+- [News Api](https://newsapi.org/)
+- [Jest](https://jestjs.io/)
+- [Figma](https://www.figma.com)
 
-To learn more about Next.js, take a look at the following resources:
+This project was created using [Create Next App](https://nextjs.org/docs)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Project Setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+you can clone this repository
 
-## Deploy on Vercel
+$ `npm install` installs all the files and dependencies the app needs to run
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You need an api_key from [CoinGecko API](https://www.coingecko.com/en/api) &
+ [News Api](https://newsapi.org/)
+`.env.local` API_KEY=example123456-3456similar - please check to have added `env.local` in your `.gitignore`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+$ `npm run dev` runs the app in dev mode and opens http://localhost:3000 to view it in your browser. Or you will be asked to confirm another port if this one isn't available.
+
+$ `npm test` runs the tests
