@@ -6,7 +6,7 @@
 
 CryptoCalc gives users the option to enter a cryptocurrency and monthly expenses, and the app calculates how many months you can live off your cryptocurrency without having to access your savings account.
 
-https://user-images.githubusercontent.com/35610295/195830947-ccadbc0f-9dd3-437e-892d-676813a6a462.mov
+![Cryptocalc(1)](https://user-images.githubusercontent.com/35610295/195872862-6b1528e7-db3b-43d3-a570-5cf6026f8acb.gif)
 
 ### Deployment
 
